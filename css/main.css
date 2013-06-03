@@ -1,165 +1,198 @@
-/*****************************************************************************/
-/*
-/* Common
-/*
-/*****************************************************************************/
-
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
+@font-face {
+  font-family: "Calluna Sans Regular";
+  src: url("/fonts/CallunaSansRegular.otf");
 }
 
-html, body { height: 100%; }
-
-body {
-  background-color: #FFF;
-  font: 13.34px Helvetica, Arial, sans-serif;
-  font-size: small;
-  text-align: center;
+section h1, 
+section h2, 
+section h3, 
+section h4, 
+section h5, 
+section h6,
+section p {
+  font-family: "Calluna Sans Regular"
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%; }
-
-h1 { margin-bottom: 1em; }
-p { margin: 1em 0; }
-
-a         { color: #00a; }
-a:hover   { color: #000; }
-a:visited { color: #a0a; }
-
-table {
-  font-size: inherit;
-  font: 100%;
+.top-bar {
+  margin-bottom: 0px;
 }
 
-/*****************************************************************************/
-/*
-/* Home
-/*
-/*****************************************************************************/
-ul.posts {
-  list-style-type: none;
-  margin-bottom: 2em;
+.section {
+  max-width: inherit;
+  margin: auto;
+  height: 400px;
+  padding-top: 50px; 
 }
 
-ul.posts li {
-  line-height: 1.75em;
+.section h1,
+.section h2 {
+  color: #fff;
+  text-align: center; 
 }
 
-ul.posts span {
-  color: #aaa;
-  font-family: Monaco, "Courier New", monospace;
-  font-size: 80%;
+.introduction {
+  background-color: #5C72DB;
 }
 
-/*****************************************************************************/
-/*
-/* Site
-/*
-/*****************************************************************************/
-
-.site {
-  font-size: 115%;
-  text-align: justify;
-  width: 42em;
-  margin: 3em auto 2em;
-  line-height: 1.5em;
+.introduction i {
+  color: #fff;
+  font-size: 90px;
 }
 
-.site .header a {
-  font-weight: bold;
-  text-decoration: none;
+.introduction h1 {
+  font-size: 100px;
+  margin-bottom: 1px;
 }
 
-.site .header h1.title {
-  display: inline-block;
-  margin-bottom: 2em;
+.usage {
+  background-color: #FFFFFF;
+  height: 300px;
+  max-height: 300px;
 }
 
-.site .header h1.title a {
-  color: #a00;
+.usage .columns {
+  margin: 0 auto;
 }
 
-.site .header h1.title a:hover {
-  color: #000;
-}
-
-.site .header a.extra {
-  color: #aaa;
-  margin-left: 1em;
-}
-
-.site .header a.extra:hover {
-  color: #000;
-}
-
-.site .meta {
-  color: #aaa;
-}
-
-.site .footer {
-  font-size: 80%;
-  color: #666;
-  border-top: 4px solid #eee;
-  margin-top: 2em;
-  overflow: hidden;
-}
-
-.site .footer .contact {
+.usage .unit {
   float: left;
-  margin-right: 3em;
 }
 
-.site .footer .contact a {
-  color: #8085C1;
+.usage p {
+  color: #000;
+  text-align: center;
+  font-size: 250%;
+  margin: 0 10px;
+  font-style: italic;
 }
 
-.site .footer .rss {
-  margin-top: 1.1em;
-  margin-right: -.2em;
+.installation {
+  background-color: #FFE76B;
+  height: inherit;
+  min-height: 400px;
+}
+
+.installation h1,
+.installation h2 {
+  color: #000;
+}
+
+.installation i {
+  font-size: 20px;
+}
+
+.installation .install {
+  margin-top: 50px; 
+}
+
+.installation .install h4 {
+  padding-bottom: 0px;
+}
+
+.installation .nuget-button-commandWrapper {
+  margin-top: 10px;
+}
+
+.usage .comment,
+.usage .example {
+  width: 50%;
+}
+
+.usage .example {
+  margin: -95px 0;
   float: right;
+  display: block;
+  padding: 0;
+  font-family: Menlo, Consolas, "Courier New", Courier, "Liberation Mono", monospace;
+  text-align: left;
 }
 
-.site .footer .rss img {
-  border: 0;
+.example p.title {  
+  display: block;
+  text-align: center;
+  margin: 0 20px;
+  padding: 5px 0;
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 3px 10px rgba(0,0,0,.5);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  color: #444;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  background: #f7f7f7;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjclIiBzdG9wLWNvbG9yPSIjY2ZjZmNmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2FhYWFhYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+  background: -moz-linear-gradient(top,  #f7f7f7 0%, #cfcfcf 7%, #aaaaaa 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(7%,#cfcfcf), color-stop(100%,#aaaaaa));
+  background: -webkit-linear-gradient(top,  #f7f7f7 0%,#cfcfcf 7%,#aaaaaa 100%);
+  background: -o-linear-gradient(top,  #f7f7f7 0%,#cfcfcf 7%,#aaaaaa 100%);
+  background: -ms-linear-gradient(top,  #f7f7f7 0%,#cfcfcf 7%,#aaaaaa 100%);
+  background: linear-gradient(top,  #f7f7f7 0%,#cfcfcf 7%,#aaaaaa 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#aaaaaa',GradientType=0 );
+  border-bottom: 1px solid #111;
 }
 
-/*****************************************************************************/
-/*
-/* Posts
-/*
-/*****************************************************************************/
+.example .code {
+  padding: 20px;
+  text-shadow: none;
+  margin: 0 20px;
+  background: #3d3d3d;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 5px 30px rgba(0,0,0,.3);
+  height: 350px;
+  text-align: left;
+  font-size: 15px;
 
-/* standard */
-#post pre {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .4em;
+  color: #fff;
 }
 
-#post ul, #post ol {
-  margin-left: 1.35em;
+footer {
+  background-color: #3d3d3d;
+  color: #888;
+  padding: 20px;
 }
 
-#post code {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .2em;
+footer .row {
+  padding: 10px 0;
 }
 
-#post pre code {
-  border: none;
+footer .copy {
+  text-align: right;
 }
 
-/* terminal */
-#post pre.terminal {
-  border: 1px solid #000;
-  background-color: #333;
-  color: #FFF;
+/* Pretty Print */
+/* desert scheme ported from vim to google prettify */
+pre.prettyprint { display: block; background-color: #333 }
+pre .nocode { background-color: none; color: #000 }
+pre .str { color: #ffa0a0 } /* string  - pink */
+pre .kwd { color: #f0e68c; font-weight: bold }
+pre .com { color: #87ceeb } /* comment - skyblue */
+pre .typ { color: #98fb98 } /* type    - lightgreen */
+pre .lit { color: #cd5c5c } /* literal - darkred */
+pre .pun { color: #fff }    /* punctuation */
+pre .pln { color: #fff }    /* plaintext */
+pre .tag { color: #f0e68c; font-weight: bold } /* html/xml tag    - lightyellow */
+pre .atn { color: #bdb76b; font-weight: bold } /* attribute name  - khaki */
+pre .atv { color: #ffa0a0 } /* attribute value - pink */
+pre .dec { color: #98fb98 } /* decimal         - lightgreen */
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE } /* IE indents via margin-left */
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 { }
+
+@media print {
+  pre.prettyprint { background-color: none }
+  pre .str, code .str { color: #060 }
+  pre .kwd, code .kwd { color: #006; font-weight: bold }
+  pre .com, code .com { color: #600; font-style: italic }
+  pre .typ, code .typ { color: #404; font-weight: bold }
+  pre .lit, code .lit { color: #044 }
+  pre .pun, code .pun { color: #440 }
+  pre .pln, code .pln { color: #000 }
+  pre .tag, code .tag { color: #006; font-weight: bold }
+  pre .atn, code .atn { color: #404 }
+  pre .atv, code .atv { color: #060 }
 }
 
-#post pre.terminal code {
-  background-color: #333;
-}
+pre.prettyprint { padding: 0px; border: none; background-color: inherit; }

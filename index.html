@@ -1,13 +1,73 @@
 ---
-layout: default
-title: Your New Jekyll Site
+layout: foundation
+title: Noda Time | Date utility for .NET
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+<div class="row section introduction">
+	<div class="large-12 columns">
+		<div class="logo">
+			
+			<h1>Noda <i class="foundicon-clock"></i> Time</h1>
+		</div>
+		<h2>Industry standard date utility for .NET</h2>
+  	</div>
+</div>
+<div class="row section usage">
+	<div class="large-12 columns">
+		<div class="comment unit">
+			<p>Noda Time aims to create a library which is powerful and easy to use correctly.</p>
+	  	</div>
+		<div class="example unit">
+			<p class="title">Samples</p>
+			<div class="code">
+				<pre class="prettyprint lang-c">
+// Timezone
+const string timeZoneId = "Brazil/East";
+
+// Local DateTime
+var localDateTime = new LocalDateTime(2011, 10, 16, 0, 0); 
+
+// Get the timezone
+var timezone = DateTimeZone.ForId(timeZoneId);
+
+// Map the result
+var localDateTimeMaping = timezone.MapLocalDateTime(localDateTime);
+				</pre>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="section installation" id="info">
+	<div class="row">
+		<div class="large-12 columns">
+			<h1>More Info</h1>
+	  	</div>
+	</div>
+	<div class="row">
+		<div class="large-4 columns">
+			<h3><i class="foundicon-globe"></i> Community</h3>
+			<p>Find out more about Noda Time on our <a href="http://groups.google.com/group/noda-time">group mailing list</a> or our <a href="http://noda-time.blogspot.com/">blog</a>.</p>
+			<p>For more specific "How do I solve problem X?" questions, please ask on Stack Overflow using the <a href="http://stackoverflow.com/questions/tagged/nodatime">nodatime</a> tag.</p>
+		</div>
+		<div class="large-4 columns">
+			<h3><i class="foundicon-page"></i> Documentation</h3>
+			<p>It is recommended that you read at least the first few pages of <a href="http://noda-time.googlecode.com/hg-history/1.1.x/docs/userguide/index.html">user's guide</a> before starting to develop using Noda Time.</p>
+			<p>You can also check out the <a href="http://noda-time.googlecode.com/hg-history/1.1.x/docs/api/Index.html">API reference</a>.</p>
+		</div>
+		<div class="large-4 columns">
+			<h3><i class="foundicon-add-doc"></i> Contributing</h3>
+			<p>Developers interested in contributing to Noda Time itself should also check out the <a href="http://noda-time.googlecode.com/hg/docs/developer/index.html">developer guide</a> and <a href="http://noda-time.googlecode.com/hg/docs/userguide/roadmap.html">current roadmap</a>.</p>
+			<p><a href="http://teamcity.codebetter.com/project.html?projectId=project54">Our continuous build</a> is hosted by <a href="http://jetbrains.com/">JetBrains</a> on <a href="http://codebetter.com/">CodeBetter</a></p>
+		</div>
+	</div>
+	<div class="row install" id="install">
+		<div class="large-6 columns">
+			<h4>Main library</h4>
+			<div style="font-size: 0.8em;"><pre class="nuget-button">Install-Package NodaTime</pre></div>
+		</div>
+		<div class="large-6 columns">
+			<h4>Useful when testing code</h4>
+			<div style="font-size: 0.8em;"><pre class="nuget-button">Install-Package NodaTime.Testing</pre></div>
+		</div>
+	</div>
 </div>
