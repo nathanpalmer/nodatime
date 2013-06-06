@@ -3,6 +3,10 @@
   src: url("/fonts/CallunaSansRegular.otf");
 }
 
+section.body {
+  min-height: 300px;
+}
+
 section h1, 
 section h2, 
 section h3, 
@@ -158,6 +162,32 @@ footer .row {
 footer .copy {
   text-align: right;
 }
+
+.section-container footer {
+  background-color: #fff;
+  padding: 10px 16px;
+  font-size: 12px;
+  border: 0px none;
+}
+
+.section-container > section > .title
+{
+  background-color: #FFE76B;
+  padding: 10px;
+}
+
+.section-container > section .content
+{
+  display: inherit;
+  background-color: #B17250;
+}
+
+.section-container > section .content a,
+.section-container > section .content a:visited
+{
+  color: #FADFFF;
+} 
+
 
 /* Pretty Print */
 /* desert scheme ported from vim to google prettify */

@@ -1,9 +1,36 @@
 ---
-layout: default
+layout: foundation
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
+{% assign parts = page.url | split: '/' %}
+<div class="row">
+	<div class="large-9 columns">
+		<h1>{{ page.title }}</h1>
+		{{ content }}
+	</div>
 
-<div id="post">
-{{ content }}
+	<div class="large-3 columns">
+		<div class="section-container">
+			<section>
+				<p class="title" data-section-title>Introduction</p>
+				<div class="content" data-section-content>
+					<ul class="side-nav">
+						{% userguide_for doc in site.pages sort_by:weight subcategory:intro %}
+							<li><a href="{{ doc.url }}" {% if doc.url == page.url %}class="active"{% endif %}>{{ doc.title }}</a></li>
+						{% enduserguide_for %}
+					</ul>
+				</div>
+			</section>
+			<section>
+				<p class="title" data-section-title>Core</p>
+				<div class="content" data-section-content>
+					<ul class="side-nav">
+						{% userguide_for doc in site.pages sort_by:weight subcategory:core %}
+							<li><a href="{{ doc.url }}" {% if doc.url == page.url %}class="active"{% endif %}>{{ doc.title }}</a></li>
+						{% enduserguide_for %}
+					</ul>
+				</div>
+			</section>
+			<footer>Version {{ parts[2] }}</footer>
+		</div>
+	</div>
 </div>

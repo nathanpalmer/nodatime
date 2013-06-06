@@ -37,7 +37,7 @@
 	<div class="fixed">
 		<nav class="top-bar">
 			<ul class="title-area">
-				<li class="name"><h1><a href="/">NodaTime</a></h1></li>
+				<li class="name"><h1><a href="/">Noda Time</a></h1></li>
 				<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     			<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
 			</ul>
@@ -46,7 +46,9 @@
 				<!-- Right Nav Section -->
 			    <ul class="right">
 			      <li class="divider hide-for-small"></li>
-			      <li><a href="#info">More Info</a></li>
+			      <li><a href="/guide">User Guide</a></li>
+			      <li class="divider hide-for-small"></li>
+			      <li><a href="/#info">More Info</a></li>
 			      <li class="divider show-for-small"></li>
 			      <li class="has-form">
 			        <a class="button" href="#install">Install</a>
@@ -87,6 +89,9 @@
 	</script>
   
   	<script src="/js/foundation.min.js"></script>
+  	{% for script in page.scripts %}
+  	<script src="{{script}}"></script>
+  	{% endfor %}
 
   <!--
   <script src="js/foundation/foundation.js"></script>  

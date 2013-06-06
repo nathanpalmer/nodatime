@@ -1,2 +1,5 @@
-name: Your New Jekyll Site
+name: Noda Time
 pygments: true
+
+markdown:      kramdown
+markdown_ext:  markdown,mkd,mkdn,md
