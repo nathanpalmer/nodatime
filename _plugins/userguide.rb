@@ -45,14 +45,20 @@ module Jekyll
       @@TypePattern      = /noda-type:\/\/([A-Za-z0-9_.]*)/
       @@IssueUrlPattern  = /(\[[^\]]*\])\[issue (\d+)\]/
       @@IssueLinkPattern = /\[issue (\d+)\]\[\]/
-      @@ApiUrlPrefix     = "../api/html/"
+      @@ApiUrlPrefix     = "../../api/html/"
 
       def preprocess(text)
-        text.gsub! @@NamespacePattern, @@ApiUrlPrefix+'\1'
-        text.gsub! @@TypePattern, @@ApiUrlPrefix+'\1'
-        text.gsub! @@IssueUrlPattern, '\1(http://code.google.com/p/noda-time/issues/detail?id=\2)'
-        text.gsub! @@IssueLinkPattern, '[issue \1](http://code.google.com/p/noda-time/issues/detail?id=\1)'
+        text.gsub!(@@NamespacePattern) { |match| translateurl(match, 'N') }
+        text.gsub!(@@TypePattern) { |match| translateurl(match, 'T') }
+        text.gsub!(@@IssueUrlPattern, '\1(http://code.google.com/p/noda-time/issues/detail?id=\2)')
+        text.gsub!(@@IssueLinkPattern, '[issue \1](http://code.google.com/p/noda-time/issues/detail?id=\1)')
         text
+      end
+
+      def translateurl(match, prefix)
+        match.gsub! /([A-Za-z0-9_.-]*):\/\//, ''
+        match.gsub! /\./, '_'
+        "#{@@ApiUrlPrefix}#{prefix}_#{match.gsub(/\./,'_')}.htm"
       end
 
       def postprocess(text)
