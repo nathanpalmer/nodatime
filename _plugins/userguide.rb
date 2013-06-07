@@ -10,14 +10,19 @@ module Jekyll
       sorted_collection = sorted_collection.sort_by { |i| (i && i.to_liquid[@attributes['sort_by']]) || 0 }
  
       parts = context['page']['url'].split('/')
-      page_url = parts[0..2].join('/')
+      page_url = parts[0..parts.length-2].join('/')
 
       new_collection = []
       sorted_collection.each do |item|
-
-        if item.data['category'] == category and   # Match the category
-           page_url == item.dir                    # Make sure it's in the same directory
-          new_collection.push(item)
+        next if item.data['hidden']
+        if page_url == item.dir # Make sure it's in the same directory
+          if category.nil?
+            new_collection.push(item)
+          else
+            if item.data['category'] == category  # Match the category
+              new_collection.push(item)
+            end
+          end
         else  
         end
       end
@@ -30,7 +35,7 @@ module Jekyll
     end
  
     def end_tag
-      'endsorted_for'
+      'enduserguide_for'
     end
   end
 

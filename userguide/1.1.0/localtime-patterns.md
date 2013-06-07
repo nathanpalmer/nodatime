@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: userguide
 title: Patterns for LocalTime values
 ---
 

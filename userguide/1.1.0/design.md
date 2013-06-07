@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: userguide
 title: Design philosophy and conventions
 category: core
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: userguide
 title: Choosing (and converting) between types
 category: core
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: userguide
 title: Updating the time zone database
 category: library
 ---

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: userguide
 title: Date and time arithmetic
 category: advanced
 ---

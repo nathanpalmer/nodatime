@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: userguide
 title: Unit testing with Noda Time
 category: library
 ---

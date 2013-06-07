@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: userguide
 title: Installation
 category: intro
 ---

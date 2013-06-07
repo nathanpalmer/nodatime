@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: userguide
 title: Limitations of Noda Time
 category: library
 ---

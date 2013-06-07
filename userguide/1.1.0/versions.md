@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: userguide
 title: Version history
 category: library
 weight: 100
