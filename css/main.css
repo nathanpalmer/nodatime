@@ -28,6 +28,10 @@ section.body {
   min-height: 300px;
 }
 
+.top-bar-section ul li a.active {
+  color: #B17250;
+}
+
 section h1, 
 section h2, 
 section h3, 
