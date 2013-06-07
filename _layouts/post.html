@@ -2,6 +2,8 @@
 layout: foundation
 ---
 {% assign parts = page.url | split: '/' %}
+{% capture lvl %}{{ page.url | append:'index.html' | split:'/' | size }}{% endcapture %}
+{% capture relative %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
 <div class="row">
 	<div class="large-9 columns">
 		<h1>{{ page.title }}</h1>
@@ -15,7 +17,7 @@ layout: foundation
 				<div class="content" data-section-content>
 					<ul class="side-nav">
 						{% userguide_for doc in site.pages sort_by:weight category:intro %}
-							<li><a href="{{ doc.url }}" {% if doc.url == page.url %}class="active"{% endif %}>{{ doc.title }}</a></li>
+							<li><a href="{{ relative }}{{ doc.url | remove_first: '/' }}" {% if doc.url == page.url %}class="active"{% endif %}>{{ doc.title }}</a></li>
 						{% enduserguide_for %}
 					</ul>
 				</div>
@@ -25,7 +27,7 @@ layout: foundation
 				<div class="content" data-section-content>
 					<ul class="side-nav">
 						{% userguide_for doc in site.pages sort_by:weight category:core %}
-							<li><a href="{{ doc.url }}" {% if doc.url == page.url %}class="active"{% endif %}>{{ doc.title }}</a></li>
+							<li><a href="{{ relative }}{{ doc.url | remove_first: '/' }}" {% if doc.url == page.url %}class="active"{% endif %}>{{ doc.title }}</a></li>
 						{% enduserguide_for %}
 					</ul>
 				</div>
@@ -35,7 +37,7 @@ layout: foundation
 				<div class="content" data-section-content>
 					<ul class="side-nav">
 						{% userguide_for doc in site.pages sort_by:weight category:advanced %}
-							<li><a href="{{ doc.url }}" {% if doc.url == page.url %}class="active"{% endif %}>{{ doc.title }}</a></li>
+							<li><a href="{{ relative }}{{ doc.url | remove_first: '/' }}" {% if doc.url == page.url %}class="active"{% endif %}>{{ doc.title }}</a></li>
 						{% enduserguide_for %}
 					</ul>
 				</div>
@@ -45,7 +47,7 @@ layout: foundation
 				<div class="content" data-section-content>
 					<ul class="side-nav">
 						{% userguide_for doc in site.pages sort_by:weight category:library %}
-							<li><a href="{{ doc.url }}" {% if doc.url == page.url %}class="active"{% endif %}>{{ doc.title }}</a></li>
+							<li><a href="{{ relative }}{{ doc.url | remove_first: '/' }}" {% if doc.url == page.url %}class="active"{% endif %}>{{ doc.title }}</a></li>
 						{% enduserguide_for %}
 					</ul>
 				</div>
