@@ -41,6 +41,8 @@
 				<!-- Right Nav Section -->
 			    <ul class="right">
 			      <li class="divider hide-for-small"></li>
+			      <li><a href="{{relative}}api" {% if page.navigation == "api" %}class="active"{% endif %}>API</a></li>
+			      <li class="divider hide-for-small"></li>
 			      <li><a href="{{relative}}developer" {% if page.navigation == "developer" %}class="active"{% endif %}>Developer Guide</a></li>
 			      <li class="divider hide-for-small"></li>
 			      <li><a href="{{relative}}{{site.userguide}}" {% if page.navigation == "userguide" %}class="active"{% endif %}>User Guide</a></li>
