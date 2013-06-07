@@ -1,5 +1,7 @@
 name: Noda Time
 pygments: true
 
-markdown:      kramdown
+markdown:      redcarpet
 markdown_ext:  markdown,mkd,mkdn,md
+
+userguide: '/userguide/1.1.0'

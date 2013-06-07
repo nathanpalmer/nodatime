@@ -6,7 +6,6 @@ title: Noda Time | Date utility for .NET
 <div class="row section introduction">
 	<div class="large-12 columns">
 		<div class="logo">
-			
 			<h1>Noda <i class="foundicon-clock"></i> Time</h1>
 		</div>
 		<h2>Industry standard date utility for .NET</h2>
@@ -18,20 +17,29 @@ title: Noda Time | Date utility for .NET
 			<p>Noda Time aims to create a library which is powerful and easy to use correctly.</p>
 	  	</div>
 		<div class="example unit">
-			<p class="title">Samples</p>
+			<p class="title">Examples (see <a href="{{site.userguide}}">User Guide</a>)</p>
 			<div class="code">
-				<pre class="prettyprint lang-c">
-// Timezone
-const string timeZoneId = "Brazil/East";
+				<pre class="prettyprint">
 
-// Local DateTime
-var localDateTime = new LocalDateTime(2011, 10, 16, 0, 0); 
+// Instant represents time from epoch
+Instant now = SystemClock.Instance.Now;
 
-// Get the timezone
-var timezone = DateTimeZone.ForId(timeZoneId);
+// Convert an instant to a ZonedDateTime
+ZonedDateTime nowInIsoUtc = now.InUtc();
 
-// Map the result
-var localDateTimeMaping = timezone.MapLocalDateTime(localDateTime);
+// Create a duration
+Duration duration = Duration.FromMinutes(3);
+
+// Add it to our ZonedDateTime
+ZonedDateTime thenInIsoUtc = nowInIsoUtc + duration;
+
+// Timezone support (multiple providers)
+var london = DateTimeZoneProviders.Tzdb["Europe/London"];
+
+// Timezone conversions
+var localDate = new LocalDateTime(2012, 3, 27, 0, 45, 00);
+var before = london.AtStrictly(localDate);
+
 				</pre>
 			</div>
 		</div>

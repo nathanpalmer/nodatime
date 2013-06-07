@@ -3,6 +3,27 @@
   src: url("/fonts/CallunaSansRegular.otf");
 }
 
+code {
+  color: #B17250;
+}
+
+a, a code {
+  color: #5C72DB;
+}
+
+a:hover, a:hover code {
+  color: #AAB9FF;
+}
+
+a:visited, a:visited code {
+  font-style: italic;
+}
+
+strong {
+  color: #000;
+  text-decoration: underline;
+}
+
 section.body {
   min-height: 300px;
 }
@@ -46,6 +67,17 @@ section p {
 .introduction h1 {
   font-size: 100px;
   margin-bottom: 1px;
+}
+
+.points {
+  background-color: #FFFFFF;
+  height: 300px;
+  max-height: 300px;
+}
+
+.points h1,
+.points h2 {
+  color: #000;
 }
 
 .usage {
@@ -135,16 +167,26 @@ section p {
   border-bottom: 1px solid #111;
 }
 
+.usage .example .code {
+  height: 350px;
+  border-radius: 0 0 5px 5px;
+  font-size: 15px;
+  /*margin-bottom: 0px;*/
+  margin: 0 20px;
+}
+
 .example .code {
   padding: 20px;
   text-shadow: none;
-  margin: 0 20px;
+  margin: 0 20px 0 0;
   background: #3d3d3d;
-  border-radius: 0 0 5px 5px;
+  border-radius: 5px;
   box-shadow: 0 5px 30px rgba(0,0,0,.3);
-  height: 350px;
+  
   text-align: left;
-  font-size: 15px;
+  /*font-size: 15px;*/
+  overflow: hidden;
+  margin-bottom: 1.25em;
 
   color: #fff;
 }
@@ -225,4 +267,4 @@ li.L1,li.L3,li.L5,li.L7,li.L9 { }
   pre .atv, code .atv { color: #060 }
 }
 
-pre.prettyprint { padding: 0px; border: none; background-color: inherit; }
+.usage pre.prettyprint { padding: 0px; border: none; background-color: inherit; }
