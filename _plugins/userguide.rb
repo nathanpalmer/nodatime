@@ -51,8 +51,6 @@ module Jekyll
       end
 
       def postprocess(text)
-        # text.gsub! /<pre><code>(\s+)<\/code><\/pre>/, '<pre class="prettyprint">\1</pre>'
-        # text.gsub! /<pre><code>(.*)<\/code><\/pre>/m, '<pre class="prettyprint">\1</pre>'
         text.gsub! /<pre><code>(.*?)<\/code><\/pre>/m, '<div class="example"><pre class="prettyprint code">\1</pre></div>'
         text
       end
